@@ -1,7 +1,5 @@
 let page = document.body.id
-
-
-let theliked = JSON.parse(localStorage.getItem('theLiked')) || []
+let theliked = JSON.parse(sessionStorage.getItem('theLiked')) || []
 let theLiked = []
 for(let i=0; i<theliked.length;i++){
     if(theliked[i] !== null){
@@ -19,7 +17,7 @@ window.addEventListener('DOMContentLoaded',()=>{
         case 'login':
             signup()
             signUpPage()
-            //console.log("login page")
+            
         default:
             getSrc()
             downloadImg()    
@@ -32,13 +30,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 function login(){
     let email = document.getElementById('email')
     let password = document.getElementById('password')
-    //let noEntry = document.querySelector('.not-entered')
     if(email.value && password.value){
         window.location.href = "home.html"
-        // console.log('got it')
-        alert("got it")
+        alert("wel come")
     }else{
-        //noEntry.style.display = "block"
         alert('enter credential')
     }
     
@@ -80,37 +75,34 @@ function signup(){
                 </div>
             </div>
         `
-        //document.body.insertAdjacentHTML("beforeend", theSignUp)
+      
         document.body.append(theSignUp)
     
 }
 function signUpPage(){
     let sign = document.querySelector(".sign-btn")
-    //console.log(sign)
+   
     sign.addEventListener("click", (e)=>{
         e.preventDefault()
-        console.log(sign)
         let thetarget = document.querySelector(".recievers")
         thetarget.classList.remove("done")
         thetarget.style.display = "block"
-        console.log(thetarget.classList)
+        
     })
 }
 
 function onlyCreate(){
     let thetarget = document.querySelector(".recievers")
     thetarget.classList.add("done")
-    //thetarget.style.zIndex = -100
     thetarget.style.display = "none"
-    console.log(thetarget.classList)
-    alert("yeah")
+    alert("succesfully created")
 }
 
 function createLogin(){
     let thetarget = document.querySelector(".recievers")
     thetarget.classList.add("done")
     window.location.href = "home.html"
-    alert("hmm")
+    
 }
 
 function getSrc(){
@@ -129,8 +121,8 @@ function getSrc(){
             if(!theLiked.includes(theImgSrc)){
                 theLiked.push(theImgSrc) 
             }
-            console.log(theImgSrc)
-            localStorage.setItem('theLiked', JSON.stringify(theLiked))
+            
+            sessionStorage.setItem('theLiked', JSON.stringify(theLiked))
             if (document.body.id !== 'favorite'){
                 btn.classList.toggle('liked')
             }
@@ -171,7 +163,7 @@ function fetchUrl(url){
 function setSrc(){
     let theImages = document.getElementsByTagName("img")
     theImages = Array.from(theImages)
-    let theliked = JSON.parse(localStorage.getItem('theLiked')) || []
+    let theliked = JSON.parse(sessionStorage.getItem('theLiked')) || []
     let theLiked = []
     for(let i=0; i<theliked.length;i++){
     if(theliked[i] !== null){
@@ -179,16 +171,12 @@ function setSrc(){
     }
     }
 
-    // for(let i = 2;i < theImages.length; i++){
-    //     theLiked.push(theImages[i].getAttribute('src'))
-    // }
-    // localStorage.setItem("theLiked", JSON.stringify(theLiked))
     console.log("the length " + theLiked.length)
     let trackList = theLiked.length - 1
     for (let itBe = 2; itBe<theImages.length; itBe++){
         console.log(theLiked[trackList])
         theImages[itBe].src = (theLiked[trackList] !== null ? theLiked[trackList]:"./images/nature3.jpg")
-       // theImages[itBe].nextElementSibling.style.opacity = 0
+       
         if(trackList == 0){
             trackList = theLiked.length - 1
         }else{
@@ -216,7 +204,7 @@ function setSrc(){
 
 const removeImg = () =>{
     let remvBtn = document.querySelectorAll('.like-btn')
-    theLiked = JSON.parse(localStorage.getItem("theLiked")) || []
+    theLiked = JSON.parse(sessionStorage.getItem("theLiked")) || []
     remvBtn.forEach(btn=>{
         let theImgSrc = ''
         btn.addEventListener('click',()=>{
@@ -238,9 +226,8 @@ const removeImg = () =>{
                     thelikeds.push(theLiked[i])
                 }
             }
-            console.log(thelikeds)
-           
-            localStorage.setItem('theLiked', JSON.stringify(thelikeds))
+            
+            sessionStorage.setItem('theLiked', JSON.stringify(thelikeds))
             setSrc()
            
         })
@@ -258,19 +245,15 @@ const hideMenus = () =>{
 
 const dblClkLike = () =>{
     let theImages = document.getElementsByTagName("img")
-    let theLiked = JSON.parse(localStorage.getItem("theLiked")) || [] 
+    let theLiked = JSON.parse(sessionStorage.getItem("theLiked")) || [] 
     theImages = Array.from(theImages)
     theImages.forEach(imag=>{
         imag.ondblclick = function(){
             theLiked.push(imag.getAttribute('src'))
             console.log(imag.getAttribute('src'))
             imag.nextElementSibling.classList.value =  "third-btn-cont liked"
-            localStorage.setItem('theLiked', JSON.stringify(theLiked))
+            sessionStorage.setItem('theLiked', JSON.stringify(theLiked))
         }
-        // imag.addEventListener("dblclick",()=>{
-            
-            
-        // })
         
     })
     
@@ -331,7 +314,6 @@ function sharePic(){
 }function hidereciver(){
     let sentBox = document.querySelector(".recievers")
     sentBox.classList.add("done")
-    console.log(sentBox.classList)
     hidereciverblock()
 }
  
@@ -339,8 +321,6 @@ function hidereciverblock(){
     let theRecive = document.querySelector(".reciever-block")
     theRecive.classList.add("add")
     
-    //console.log(theRecive.classList)
-   // hidereciver()
 }
 
 function sendFeed(){
@@ -348,13 +328,13 @@ function sendFeed(){
     let theSendBtn = document.getElementById('send-feed')
     let theSuccess = document.querySelector('.the-success')
     theSendBtn.addEventListener('click',()=>{
-        console.log('im clicked')
+        
         if(theFeed.value){
             theSuccess.style.display = 'block'
-            console.log('success')
+            
         }else{
             theFeed.placeholder = 'please write your thought'
-            console.log('failed')
+            
         }
     })
 }
