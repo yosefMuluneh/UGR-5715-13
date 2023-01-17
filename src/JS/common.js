@@ -1,5 +1,5 @@
 let page = document.body.id
-let theliked = JSON.parse(sessionStorage.getItem('theLiked')) || []
+let theliked = JSON.parse(localStorage.getItem('theLiked')) || []
 let theLiked = []
 for(let i=0; i<theliked.length;i++){
     if(theliked[i] !== null){
@@ -123,7 +123,7 @@ function getSrc(){
                 theLiked.push(theImgSrc) 
             }
             
-            sessionStorage.setItem('theLiked', JSON.stringify(theLiked))
+            localStorage.setItem('theLiked', JSON.stringify(theLiked))
             if (document.body.id !== 'favorite'){
                 btn.classList.toggle('liked')
             }
@@ -164,7 +164,7 @@ function fetchUrl(url){
 function setSrc(){
     let theImages = document.getElementsByTagName("img")
     theImages = Array.from(theImages)
-    let theliked = JSON.parse(sessionStorage.getItem('theLiked')) || []
+    let theliked = JSON.parse(localStorage.getItem('theLiked')) || []
     let theLiked = []
     for(let i=0; i<theliked.length;i++){
     if(theliked[i] !== null){
@@ -205,7 +205,7 @@ function setSrc(){
 
 const removeImg = () =>{
     let remvBtn = document.querySelectorAll('.like-btn')
-    theLiked = JSON.parse(sessionStorage.getItem("theLiked")) || []
+    theLiked = JSON.parse(localStorage.getItem("theLiked")) || []
     remvBtn.forEach(btn=>{
         let theImgSrc = ''
         btn.addEventListener('click',()=>{
@@ -228,7 +228,7 @@ const removeImg = () =>{
                 }
             }
             
-            sessionStorage.setItem('theLiked', JSON.stringify(thelikeds))
+            localStorage.setItem('theLiked', JSON.stringify(thelikeds))
             setSrc()
            
         })
@@ -246,14 +246,14 @@ const hideMenus = () =>{
 
 const dblClkLike = () =>{
     let theImages = document.getElementsByTagName("img")
-    let theLiked = JSON.parse(sessionStorage.getItem("theLiked")) || [] 
+    let theLiked = JSON.parse(localStorage.getItem("theLiked")) || [] 
     theImages = Array.from(theImages)
     theImages.forEach(imag=>{
         imag.ondblclick = function(){
             theLiked.push(imag.getAttribute('src'))
             console.log(imag.getAttribute('src'))
             imag.nextElementSibling.classList.value =  "third-btn-cont liked"
-            sessionStorage.setItem('theLiked', JSON.stringify(theLiked))
+            localStorage.setItem('theLiked', JSON.stringify(theLiked))
         }
         
     })
