@@ -176,7 +176,7 @@ function setSrc(){
     let trackList = theLiked.length - 1
     for (let itBe = 2; itBe<theImages.length; itBe++){
         console.log(theLiked[trackList])
-        theImages[itBe].src = (theLiked[trackList] !== null ? theLiked[trackList]:"./images/nature3.jpg")
+        theImages[itBe].src = ((theLiked[trackList] !== null || theLiked[trackList] !== undefined)  ? theLiked[trackList]:"./images/nature3.jpg")
        
         if(trackList == 0){
             trackList = theLiked.length - 1
