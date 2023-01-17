@@ -31,7 +31,7 @@ function login(){
     let email = document.getElementById('email')
     let password = document.getElementById('password')
     if(email.value && password.value){
-        window.location.href = "/src/home.html"
+        window.location.href = "src/home.html"
         alert("wel come")
     }else{
         alert('enter credential')
