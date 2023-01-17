@@ -31,7 +31,8 @@ function login(){
     let email = document.getElementById('email')
     let password = document.getElementById('password')
     if(email.value && password.value){
-        window.location.href = "src/home.html"
+        //window.location.href = "src/home.html"
+        window.open("src/home.html", "_self")
         alert("wel come")
     }else{
         alert('enter credential')
@@ -101,8 +102,8 @@ function onlyCreate(){
 function createLogin(){
     let thetarget = document.querySelector(".recievers")
     thetarget.classList.add("done")
-    window.location.href = "src/home.html"
-    
+    //window.location.href = "src/home.html"
+    window.open("src/home.html", "_self")
 }
 
 function getSrc(){
