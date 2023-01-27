@@ -5,48 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<style>
+    .the-success{
+        display: none;
+    }
+</style>
+    <!-- <link rel="stylesheet" href="./contact.css"> -->
 </head>
 <body>
-    <main>
-        <h1>Contact Us</h1>
-        <div>
-            <img src="./image/eagle.jpg" alt="logo picture">
+    <main class="d-flex text-center flex-column justify-content-center">
+        <h1 class="mb-5 mt-4">Contact Us</h1>
+        <div class="mb-5" >
+            <img class="rounded-circle"  src="./image/eagle.jpg" alt="logo picture">
+           
         </div>
-        <div>
-            <img src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="company picture">
+        <div class="comp-pic">
+            <img style="height: 200px;" src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="company picture">
         </div>
-        <div>
-            <div>
-                 <a href="www.google.com" title="email us now">email us</a>
+        <div class="d-flex flex-column gap-2 bg-light mt-5 p-3 rounded border border-3 border-secondary ms-5 me-5">
+            <div class="d-flex justify-content-between  ps-3 pe-4 text-center">
+                 <a  href="www.gmail.com" title="email us now">email us</a>
+                 <a href="www.facebook.com"><img src="./image/104458_facebook_social media_fb_social_icon.png" alt="facebook logo"></a>
             </div>
-            <div>
+            <div class="d-flex flex-row hoverable  justify-content-between ps-3 pe-4 text-center">
                 <a href="www.facebook.com" title="follow on facebook page">follow us on facebook</a>
-                <img src="./image/104458_facebook_social media_fb_social_icon.png" alt="facebook logo">
+                <a href="www.facebook.com"><img src="./image/104458_facebook_social media_fb_social_icon.png" alt="facebook logo"></a>   
             </div>
-           <div>
+           <div class="d-flex flex-row hoverable  justify-content-between ps-3 pe-4 text-center">
                 <a href="www.instagram.com" title="follow us on instagram">follow our instagram</a>
-                <img src="./image/instagram-logo.png" alt="instagram logo">
+                <a href="www.instagram.com"><img src="./image/instagram-logo.png" alt="instagram logo"></a>
            </div>
-            <div>
+            <div class="d-flex flex-row hoverable  justify-content-between ps-3 pe-4 text-center">
                 <a href="www.linkedin.com">follow on a linkedIn page</a>
-            <img src="./image/iconmonstr-linkedin-3-64.png" alt="linkedin logo">
+                <a href="www.linked.com"><img src="./image/iconmonstr-linkedin-3-64.png" alt="linkedin logo"></a>
             </div>
             
         </div>
         <div>
-            <form action="">
-                <label for="feedback">Your feedback:</label><br>
-                <input type="text" id="feedback">
-                <button type="button">Send</button>
+            <form class="form-row mb-5">
+                <div class="form-group col-md-6 text-start ms-5 mt-5">
+                    <label for="feedback" class="mb-3">Your feedback:</label>
+                    <input type="text" class="form-control" id="feedback" placeholder="Write Your Feedback here">
+                    <button type="button" class="btn btn-primary mt-2" id="send-feed" onclick={sendFeed()}>Send</button>
+                    <p class="the-success">you have succesfully sent your feedback. Thank you🙏</p>
+                </div>
             </form>
         </div>
     </main>
-    <footer>
-        &copy; Tourism 2022
-<a href="./home.html" title="to home page">home</a>
-<a href="./about.html" title="about us page">About us</a>
-    </footer>
-    
+    <footer class="row ps-2 bg-dark text-white">
+        <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-center">  
+          &copy; Tourism 2022
+          <p>since 2007</p>
+          <p>locatio: Addis Ababa, Ethiopia</p>
+        </div>
+       <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-around">
+        <a href="./home.html">Home</a>
+        <p>telephone: +25111********</p>
+        <p>post: 86098</p>
+      </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-around">
+          <a href="./about.html">About Us</a>
+          <a href="www.facebook.com" >facebook</a>
+          <a href="www.instagram.com">instagram</a>
+        </div>
+        
+      </footer>
+    <script type="text/javascript" src="./common.js"></script>
 </body>
 </html>
