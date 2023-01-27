@@ -5,77 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    
+    <!-- <link rel="stylesheet" href="./about.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        section img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <h1>About Us</h1>
+    <main class="ms-1">
         <div>
-            <img src="./image/eagle.jpg" alt="">
-        </div>
-        <article>
-            <section>
-                <h2>vision</h2>
-                <div>
-                    <img src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam excepturi magnam impedit aliquid odio assumenda officiis tenetur commodi sint!</p>
-
+            <div class="row d-flex justify-content-center">
+                <h1 class="text-center mb-5 mt-3">About Us</h1>
+                <div class="col-sm-6 mb-5 d-flex justify-content-center">
+                    <img class="rounded-circle" src="./image/eagle.jpg" alt="">
                 </div>
-                
-            </section>
-            <section>
-                <h2>mission</h2>
-                <div>
-                    <img src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam excepturi magnam impedit aliquid odio assumenda officiis tenetur commodi sint!</p>
-                </div>
-                
-                
-            </section>
-        </article>
-        <div>
-            <div>
-                <video muted controls >
-                    <source src="./video/video.mp4" type="video/mp4" >
-                    <track label="English" kind="subtitles" srclang="en" src="" default>
-                  </video>
-                <audio src="./audio/audio.mp3" type='audio/mp3' muted controls></audio>
             </div>
-            <div>
-                <table>
+            <div class="container">
+
+                <article class="row mt-3 mb-5 flex-lg-row flex-md-row d-flex justify-content-evenly flex-sm-column">
+                    <section class="col-lg-3 col-md-7 col-sm-10 ms-sm-5 mb-4 card shadow">
+                        <img class="card-img-top" src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="">
+                        <div class="card-body">
+                            <h2>vision</h2>
+                            
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam excepturi magnam impedit aliquid odio assumenda officiis tenetur commodi sint!</p>
+        
+                        </div>
+                        
+                    </section>
+                    <section class="col-lg-3 col-md-7  col-sm-10 mb-4 ms-sm-5  card shadow">
+                        <img class="card-img-top" src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="">
+                        <div class="card-body">       
+                            <h2>mission</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam excepturi magnam impedit aliquid odio assumenda officiis tenetur commodi sint!</p>
+                        </div>
+                        
+                        
+                    </section>
+                    <section class="col-lg-3 col-md-7 col-sm-10 ms-sm-5 mb-4 card shadow">
+                        <img class="card-img-top" src="./image/abbe-sublett-nxZDMUQhN4o-unsplash.jpg" alt="">
+                        <div class="card-body">
+                            <h2>Values</h2>
+                            
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam excepturi magnam impedit aliquid odio assumenda officiis tenetur commodi sint!</p>
+                        </div>
+                        
+                        
+                    </section>
+                </article>
+            </div>
+            <div class="container mb-5" >
+                <div class="row">
+                    <video muted controls class="col-lg-8 col-sm-12 mb-2">
+                        <source src="./video/video.mp4" type="video/mp4" >
+                        <track label="English" kind="subtitles" srclang="en" src="" default>
+                      </video>
+                    <audio class="col-lg-4 col-sm-12" src="./audio/audio.mp3" type='audio/mp3' muted controls></audio>
+                </div>
+                
+            </div>
+            <div class="ps-5 pe-5">
+                <table class="table table-striped table-hover">
                     <tr>
                         <th>year</th>
                         <th>pictures</th>
                         <th>parks</th>
                         <th>users</th>
+                        <th>downloads</th>
                     </tr>
-                    <tr>
+                    <tr class="even">
                         <td>2010</td>
                         <td>1500</td>
                         <td>7</td>
                         <td>500,000</td>
+                        <td>1,500,000</td>
                     </tr>
-                    <tr>
+                    <tr class="odd">
                         <td>2011</td>
                         <td>2000</td>
                         <td>12</td>
                         <td>556,000</td>
+                        <td>2,000,000</td>
                     </tr>
-                    <tr>
+                    <tr class="even">
                         <td>2012</td>
                         <td>2500</td>
                         <td>15</td>
                         <td>675,000</td>
+                        <td>2,354,000</td>
                     </tr>
                 </table>
             </div>
         </div>
-        <footer>
-            &copy;Tourism 2022 
-            <a href="./home.html" title="home page">Home</a>
-            <a href="./contact.html" title="contact us page">Contact Us</a>
-        </footer>
+        
     </main>
-    
+    <footer class="row ps-2 bg-dark text-white">
+        <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-center">  
+          &copy; Tourism 2022
+          <p>since 2007</p>
+          <p>locatio: Addis Ababa, Ethiopia</p>
+        </div>
+       <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-around">
+        <a href="./home.html">Home</a>
+        <p>telephone: +25111********</p>
+        <p>post: 86098</p>
+      </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column justify-content-around">
+          <a href="./contact.html">Contact Us</a>
+          <a href="www.facebook.com" >facebook</a>
+          <a href="www.instagram.com">instagram</a>
+        </div>
+        
+      </footer>
 </body>
 </html>
